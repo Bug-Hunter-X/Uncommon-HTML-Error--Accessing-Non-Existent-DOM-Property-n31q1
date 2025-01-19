@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    let element = document.getElementById("myDiv");
+    let text = element ? element.textContent : "Element not found";
+    console.log(text); // Handles the case where the element might not exist
+
+     // Safer way to check for the property
+    if (element && element.hasOwnProperty('textContent')){
+        let safeText = element.textContent
+        console.log(safeText)
+    }else{
+        console.log("Property does not exist")
+    }
+  </script>
+</body>
+</html>
